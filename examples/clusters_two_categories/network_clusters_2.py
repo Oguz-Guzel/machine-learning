@@ -12,7 +12,7 @@ import pandas as pd
 import numpy as np
 
 # Load the data and shuffle each time
-train_df = pd.read_csv('../clusters_two_categories/data/train.csv')
+train_df = pd.read_csv('./data/train.csv')
 one_hot_color = pd.get_dummies(train_df.color).values
 one_hot_marker = pd.get_dummies(train_df.marker).values
 
@@ -37,7 +37,7 @@ x = np.column_stack((train_df.x.values, train_df.y.values))
 
 model.fit(x, labels, batch_size=32, epochs=20)
 
-test_df = pd.read_csv('../clusters_two_categories/data/test.csv')
+test_df = pd.read_csv('./data/test.csv')
 one_hot_color_test = pd.get_dummies(test_df.color).values
 one_hot_marker_test = pd.get_dummies(test_df.marker).values
 
