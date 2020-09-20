@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 
 # Load the data and shuffle each time
-train_df = pd.read_csv('../clusters/data/train.csv')
+train_df = pd.read_csv('./data/train.csv')
 color_dict = {'red': 0, 'blue': 1, 'green': 2, 'teal': 3, 'orange': 4, 'purple': 5}
 train_df['color'] = train_df.color.apply(lambda x: color_dict[x])
 np.random.shuffle(train_df.values)
@@ -37,7 +37,7 @@ x = np.column_stack((train_df.x.values, train_df.y.values))
 
 model.fit(x, train_df.color.values, batch_size=4, epochs=10)
 
-test_df = pd.read_csv('../clusters/data/test.csv')
+test_df = pd.read_csv('./data/test.csv')
 test_x = np.column_stack((test_df.x.values, test_df.y.values))
 
 # Test the model
