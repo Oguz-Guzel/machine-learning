@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 
 # Load the data and shuffle each time
-train_df = pd.read_csv('../complex/data/train.csv')
+train_df = pd.read_csv('./data/train.csv')
 np.random.shuffle(train_df.values)
 
 
